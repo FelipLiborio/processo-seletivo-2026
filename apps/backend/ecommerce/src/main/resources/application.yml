@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ecommerce
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce
+    username: dev123
+    password: dev123
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+server:
+  port: 8080
