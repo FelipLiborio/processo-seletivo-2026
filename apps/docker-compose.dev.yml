@@ -40,6 +40,18 @@ services:
 
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
+  backend:
+    build:
+      context: ./backend/ecommerce
+      dockerfile: Dockerfile
+    container_name: ecommerce-backend-dev
+    env_file:
+      - ./backend/ecommerce/.env.docker
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
   loki:
     image: grafana/loki:3.0.0
     container_name: ecommerce-loki-dev

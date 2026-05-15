@@ -45,6 +45,18 @@ services:
 
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
+  backend:
+    build:
+      context: ./backend/ecommerce
+      dockerfile: Dockerfile
+    container_name: ecommerce-backend
+    env_file:
+      - ./backend/ecommerce/.env.docker
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
   prometheus:
     image: prom/prometheus
     container_name: ecommerce-prometheus
