@@ -9,8 +9,6 @@ services:
       POSTGRES_PASSWORD: dev123
     ports:
       - "5432:5432"
-    volumes:
-      - ./infra/data/set.sql:/docker-entrypoint-initdb.d/01-set.sql:ro
 
   redis:
     image: redis:7
