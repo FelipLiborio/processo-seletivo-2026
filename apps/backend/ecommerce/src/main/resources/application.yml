@@ -1,11 +1,11 @@
 spring:
   application:
-    name: ecommerce
+    name: ${APP_NAME:ecommerce}
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/ecommerce
-    username: dev123
-    password: dev123
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
   jpa:
     hibernate:
